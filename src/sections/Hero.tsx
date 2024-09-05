@@ -1,4 +1,6 @@
+import Circle from "@/components/Circle";
 import CutCornerButton from "@/components/CutCornerButton";
+import Hexagon from "@/components/Hexagon";
 import React from "react";
 
 const Hero = () => {
@@ -20,6 +22,29 @@ const Hero = () => {
 				</div>
 				<div className=" flex justify-center mt-24">
 					<div className="inline-flex  relative z-0">
+						<Hexagon className={"size-[1100px]"} />
+						<Hexagon className={"size-[1800px]"} />
+						<Circle className={"left-[200px] -top-[900px]"}>
+							<img
+								src="/assets/images/cube.png"
+								alt="Cube 3D image"
+								className="size-[140px]"
+							/>
+						</Circle>
+						<Circle className={"left-[200px] top-[270px]"}>
+							<img
+								src="/assets/images/cuboid.png"
+								alt="Cuboid 3D image"
+								className="size-[140px]"
+							/>
+						</Circle>
+						<Circle className={"-left-[600px] -top-[80px]"}>
+							<img
+								src="/assets/images/torus.png"
+								alt="Torus 3D image"
+								className="size-[140px]"
+							/>
+						</Circle>
 						<img
 							src="/assets/images/icosahedron.png"
 							alt="Icosahedron 3D Image"
@@ -31,6 +56,14 @@ const Hero = () => {
 							className="w-[500px]"
 						/>
 					</div>
+				</div>
+				<div className="flex justify-center flex-col items-center mt-40 md:mt-80 gap-4">
+					<div className="h-10 w-5 outline outline-[6px] outline-fuchsia-500/10 inline-flex justify-center pt-2 rounded-full">
+						<div className="h-3 w-1 bg-fuchsia-500 rounded-full" />
+					</div>
+					<p className="uppercase text-zinc-500 font-extrabold tracking-wider">
+						Scroll to learn more
+					</p>
 				</div>
 			</div>
 		</section>
