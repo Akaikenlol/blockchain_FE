@@ -32,3 +32,9 @@ export const cardData = [
 		color: "violet",
 	},
 ];
+
+export const listItems = [
+	"Experience unparalleled security and scalability",
+	"Fully benefit from scalable network effects",
+	"Unlock the potential of decentralized networks",
+];

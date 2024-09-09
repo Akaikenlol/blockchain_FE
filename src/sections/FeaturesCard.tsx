@@ -1,3 +1,4 @@
+import TextButton from "@/components/TextButton";
 import { Button } from "@/components/ui/button";
 import { cardData } from "@/constants";
 import { cn } from "@/lib/utils";
@@ -12,27 +13,25 @@ const FeaturesCard = () => {
 				</h2>
 				<div className="mt-36 lg:mt-48 flex">
 					<div className="flex flex-none gap-8">
-						{cardData.map((card, i) => (
+						{cardData.map(({ image, alt, title, description, color }) => (
 							<div
 								className="relative z-0 p-8 md:p-10 max-w-xs md:max-w-md group"
-								key={i}
+								key={title}
 							>
 								<div
 									className={cn(
 										"absolute size-16 rounded-xl bg-fuchsia-500 top-1.5 right-1.5 -z-10 blur-lg opacity-0 group-hover:opacity-100 transition duration-300",
-										card.color === "lime" && "bg-lime-500",
-										card.color === "cyan" && "bg-cyan-500",
-										card.color === "violet" && "bg-violet-500"
+										color === "lime" && "bg-lime-500",
+										color === "cyan" && "bg-cyan-500",
+										color === "violet" && "bg-violet-500"
 									)}
 								/>
 								<div
 									className={cn(
 										"absolute size-16 rounded-xl bg-fuchsia-500 group-hover:bg-fuchsia-400 transition duration-300 top-1.5 right-1.5 -z-10",
-										card.color === "lime" &&
-											"bg-lime-500 group-hover:bg-lime-400",
-										card.color === "cyan" &&
-											"bg-cyan-500 group-hover:bg-cyan-400",
-										card.color === "violet" &&
+										color === "lime" && "bg-lime-500 group-hover:bg-lime-400",
+										color === "cyan" && "bg-cyan-500 group-hover:bg-cyan-400",
+										color === "violet" &&
 											"bg-violet-500 group-hover:bg-violet-400"
 									)}
 								/>
@@ -41,27 +40,18 @@ const FeaturesCard = () => {
 									<div className="inline-flex relative">
 										<div className="absolute group-hover:bg-zinc-950/30 transition duration-300 h-4 w-full top-[calc(100%+16px)] bg-zinc-950/70 rounded-[100%] [mask-image:radial-gradient(closest-side,black,transparent)]" />
 										<img
-											src={card.image}
-											alt={card.alt}
+											src={image}
+											alt={alt}
 											className="size-40 group-hover:-translate-y-6 transition duration-300"
 										/>
 									</div>
 								</div>
 								<h3 className="font-heading font-black text-3xl mt-12">
-									{card.title}
+									{title}
 								</h3>
-								<p className="text-lg text-zinc-400 mt-4">{card.description}</p>
+								<p className="text-lg text-zinc-400 mt-4">{description}</p>
 								<div className="flex justify-between items-center mt-12">
-									<Button
-										className={cn(
-											"text-sm font-heading uppercase font-extrabold tracking-wider text-fuchsia-500",
-											card.color === "lime" && "text-lime-500",
-											card.color === "cyan" && "text-cyan-500",
-											card.color === "violet" && "text-violet-500"
-										)}
-									>
-										Learn More
-									</Button>
+									<TextButton color={color}>Learn More</TextButton>
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										fill="none"
