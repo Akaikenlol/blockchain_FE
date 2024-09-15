@@ -2,7 +2,7 @@
 title: "How NFTs Are Changing Digital Ownership"
 description: "Non-Fungible Tokens (NFTs) are redefining how we perceive and handle digital ownership across various industries."
 pubDate: "2024-08-05"
-category: Technology
+category: Security
 slug: "how-nfts-changing-digital-ownership"
 author:
   name: "Emily Davis"
@@ -41,4 +41,3 @@ Phasellus accumsan magna et sapien venenatis, non facilisis metus aliquet. Nam s
 Morbi fringilla convallis sapien, id pulvinar odio volutpat. Vivamus ac magna at nisi ornare auctor in a augue. Aliquam erat volutpat. Integer nec lacinia lectus. Nunc sit amet libero ut lorem consequat posuere quis in elit. Praesent ultricies orci a elit aliquet, a volutpat magna sagittis.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis nisi magna. Fusce non diam at arcu pulvinar tempus non sit amet tortor. Proin nec mi sed augue consequat lacinia. Etiam auctor sodales orci, vel feugiat felis ullamcorper in.
-
