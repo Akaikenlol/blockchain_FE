@@ -8,6 +8,7 @@ import FeatureCard from "../sections/FeaturesCard";
 import FeaturesGrid from "@/sections/FeaturesGrid";
 import LatestPost from "@/sections/LatestPost";
 import { getCollection } from "astro:content";
+import Testimonials from "@/sections/Testimonials";
 
 const posts = await getCollection("blog");
 const latestPosts = posts.sort((a,b) => {
@@ -22,4 +23,5 @@ const latestPosts = posts.sort((a,b) => {
   <FeatureCard/>
   <FeaturesGrid/>
   <LatestPost latestPosts={latestPosts}/>
+  <Testimonials/>
 </DefaultLayout>

@@ -38,3 +38,24 @@ export const listItems = [
 	"Fully benefit from scalable network effects",
 	"Unlock the potential of decentralized networks",
 ];
+
+export const testimonials = [
+	{
+		text: "The user experience is phenomenal, and the support team is always there to help. Highly recommended!",
+		name: "Erica Wyatt",
+		title: "Product Manager - BlockLink",
+		avatarImage: "/assets/images/avatar-erica-wyatt.jpg",
+	},
+	{
+		text: "Our productivity has skyrocketed since we started using Blockforge. It's a game-changer for our team.",
+		name: "Noel Baldwin",
+		title: "Lead Developer - BitBridge",
+		avatarImage: "/assets/images/avatar-noel-baldwin.jpg",
+	},
+	{
+		text: "The integration process was seamless, and the performance improvements are beyond our expectations.",
+		name: "Harry Bender",
+		title: "CTO - CryptoSolutions",
+		avatarImage: "/assets/images/avatar-harry-bender.jpg",
+	},
+];
