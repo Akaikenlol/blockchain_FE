@@ -59,3 +59,10 @@ export const testimonials = [
 		avatarImage: "/assets/images/avatar-harry-bender.jpg",
 	},
 ];
+
+export const navData = [
+	{ name: "Home", link: "/" },
+	{ name: "Blog", link: "/" },
+	{ name: "Careers", link: "/" },
+	{ name: "Contact", link: "/" },
+];
