@@ -9,6 +9,7 @@ import FeaturesGrid from "@/sections/FeaturesGrid";
 import LatestPost from "@/sections/LatestPost";
 import { getCollection } from "astro:content";
 import Testimonials from "@/sections/Testimonials";
+import CallToAction from "@/sections/CallToAction";
 
 const posts = await getCollection("blog");
 const latestPosts = posts.sort((a,b) => {
@@ -24,4 +25,5 @@ const latestPosts = posts.sort((a,b) => {
   <FeaturesGrid/>
   <LatestPost latestPosts={latestPosts}/>
   <Testimonials/>
+  <CallToAction/>
 </DefaultLayout>
