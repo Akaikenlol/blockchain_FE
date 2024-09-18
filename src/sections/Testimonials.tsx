@@ -1,6 +1,7 @@
 import { testimonials } from "@/constants";
 import { cn } from "@/lib/utils";
 import React from "react";
+import { motion } from "framer-motion";
 
 const Testimonials = () => {
 	return (
@@ -8,8 +9,24 @@ const Testimonials = () => {
 			<div className="container">
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 md:gap-8 lg:gap-12">
 					{testimonials.map((item, index) => (
-						<blockquote
+						<motion.blockquote
 							key={index}
+							initial={{
+								opacity: 0,
+								y: 204,
+							}}
+							whileInView={{
+								opacity: 1,
+								y: 0,
+							}}
+							viewport={{
+								once: true,
+							}}
+							transition={{
+								delay: index * 0.5,
+								ease: "easeInOut",
+								duration: 1,
+							}}
 							className={cn(index === 2 && "md:hidden lg:block")}
 						>
 							<p className="font-heading text-3xl lg:text-4xl font-black">
@@ -33,7 +50,7 @@ const Testimonials = () => {
 									</div>
 								</div>
 							</cite>
-						</blockquote>
+						</motion.blockquote>
 					))}
 				</div>
 			</div>
