@@ -2,7 +2,7 @@ import Card from "@/components/Card";
 import { cardData } from "@/constants";
 import { cn } from "@/lib/utils";
 import React from "react";
-import { useRef, useLayoutEffect, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 
 const FeaturesCard = () => {
 	const [selectedCardIndex, setSelectedCardIndex] = useState(0);
