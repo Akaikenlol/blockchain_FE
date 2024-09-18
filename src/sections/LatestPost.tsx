@@ -5,10 +5,20 @@ import React from "react";
 import Tag from "@/components/Tag";
 import CutCornerButton from "@/components/CutCornerButton";
 import { cn } from "@/lib/utils";
-import { twMerge } from "tailwind-merge";
+import { useRef, useState, useEffect } from "react";
+import { useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 
 const LatestPost = (props: { latestPosts: CollectionEntry<"blog">[] }) => {
 	const { latestPosts } = props;
+	const targetRef = useRef(null);
+
+	const { scrollYProgress } = useScroll({
+		target: targetRef,
+		offset: ["start end", "end start"],
+	});
+
+	const marginTop = useTransform(scrollYProgress, [0, 1], [0, 64]);
 	return (
 		<section className="py-60">
 			<div className="container">
@@ -45,7 +55,13 @@ const LatestPost = (props: { latestPosts: CollectionEntry<"blog">[] }) => {
 							)
 						)}
 					</div>
-					<div className="hidden md:flex flex-col gap-8 mt-16">
+					<motion.div
+						className="hidden md:flex flex-col gap-8 mt-16"
+						ref={targetRef}
+						style={{
+							marginTop,
+						}}
+					>
 						{latestPosts.map(
 							({ data: { title, description, category } }, postIndex) => (
 								<Card
@@ -67,7 +83,7 @@ const LatestPost = (props: { latestPosts: CollectionEntry<"blog">[] }) => {
 								</Card>
 							)
 						)}
-					</div>
+					</motion.div>
 				</div>
 				<div className="flex justify-center mt-48 md:mt-32">
 					<CutCornerButton>Read the Blog</CutCornerButton>

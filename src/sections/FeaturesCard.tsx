@@ -36,6 +36,7 @@ const FeaturesCard = () => {
 								style={{
 									transform: `translateX(calc((-100% - 2rem) * ${selectedCardIndex}))`,
 								}}
+								key={title}
 							>
 								<Card
 									key={title}
