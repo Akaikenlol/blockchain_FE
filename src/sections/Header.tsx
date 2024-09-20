@@ -3,14 +3,20 @@ import Hexagon from "@/components/Hexagon";
 import { navData } from "@/constants";
 import { cn } from "@/lib/utils";
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import { motion } from "framer-motion";
 
 const Header = () => {
 	const [isOpen, setIsOpen] = useState(false);
 
-	useState(() => {}, []);
+	useEffect(() => {
+		if (isOpen) {
+			document.body.style.overflow = "hidden";
+		} else {
+			document.body.style.overflow = "auto";
+		}
+	}, [isOpen]);
 	return (
 		<>
 			<header className=" sticky top-0 z-40 bg-zinc-900/50 backdrop-blur-lg">
@@ -51,7 +57,7 @@ const Header = () => {
 			<AnimatePresence>
 				{isOpen && (
 					<motion.div className="fixed size-full top-0 left-0 z-30 bg-zinc-900">
-						<div className="absolute inset-2 rounded-md bg-zinc-800 mt-24 z-0">
+						<div className="absolute inset-2 rounded-md bg-zinc-800 mt-24 md:mt-28 z-0">
 							<div className="absolute top-1/2 left-full -translate-x-1/2 -translate-y-1/2 -z-10">
 								<Hexagon size={700} />
 							</div>
@@ -59,7 +65,7 @@ const Header = () => {
 								<Hexagon size={1100} />
 							</div>
 							<div className="h-full flex justify-center items-center">
-								<nav className="flex flex-col items-center gap-12">
+								<nav className="flex flex-col items-center gap-12 md:gap-16">
 									{navData.map((item, i) => (
 										<motion.a
 											initial={{ opacity: 0 }}
@@ -68,13 +74,14 @@ const Header = () => {
 											transition={{
 												duration: 0.5,
 												ease: "linear",
-												delay: 0.25 * i,
+												delay: 0.2 * i,
 											}}
 											href={item.link}
 											key={i}
-											className="text-4xl font-heading font-black text-zinc-500 hover:text-zinc-300 transition duration-300"
 										>
-											{item.name}
+											<span className="text-4xl md:text-5xl lg:text-6xl font-heading font-black text-zinc-500 hover:text-zinc-300 transition duration-300">
+												{item.name}
+											</span>
 										</motion.a>
 									))}
 								</nav>
