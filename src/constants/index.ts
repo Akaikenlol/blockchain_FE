@@ -62,7 +62,7 @@ export const testimonials = [
 
 export const navData = [
 	{ name: "Home", link: "/" },
-	{ name: "Blog", link: "/" },
-	{ name: "Careers", link: "/" },
-	{ name: "Contact", link: "/" },
+	{ name: "Blog", link: "/blog" },
+	{ name: "Careers", link: "/careers" },
+	{ name: "Contact", link: "/contact" },
 ];
