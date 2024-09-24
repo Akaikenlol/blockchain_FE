@@ -15,9 +15,9 @@ import TextArea from "@/components/TextArea.astro";
         <p class="text-center text-xl md:text-2xl max-w-xl mt-6 mx-auto text-zinc-400">We're here to help and answer any questions you may have. Reach out to us to learn more about our services, get support, or to apply for positions.</p>
     </InteriorHero>
     <InteriorContent>
-        <div class="pb-[10000px] max-w-xl mx-auto">
+        <div class="max-w-xl mx-auto">
             <h2 class="font-heading font-black text-3xl">What can we help you with?</h2>
-            <form action="" class="flex flex-col mt-8">
+            <form action="" class="flex flex-col mt-8" name="contact" method="POST" data-netlify="true">
                 <label for="name">Name</label>
                 <Input type="text" name="Name" id="name" placeholder="Name" class="mt-1"/>
                 <label for="email" class="mt-4">Email</label>
